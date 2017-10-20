@@ -1,0 +1,20 @@
+
+node
+{
+
+    stage ('checkout')
+    {
+        git changelog: false, poll: false, url: 'https://github.com/mybatis/jpetstore-6.git'
+    }
+    stage ('build')
+    {
+    withMaven(jdk: 'jdk', maven: 'MAVEN') {
+    // some block
+    }
+    sh "mvn clean install"
+    }
+    stage ('deploy')
+    {
+        sh "cp -rv target/jpetstore.war /apps/apache-tomcat-8.5.23/webapps/"
+    }
+}

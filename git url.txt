@@ -1,0 +1,10 @@
+https://github.com/catalyzeio/java-tomcat-example-app
+https://github.com/mybatis/jpetstore-6.git
+
+https://www.youtube.com/watch?v=j5D8SLxn6YA -- Jenkins deploy
+
+
+cp -rv /root/.jenkins/workspace/Tomcat build/target/jpetstore.war /apps/DevOps/jepetstore/jepststore-${BUILD_NUMBER}.war
+
+
+cp -rv /root/.jenkins/workspace/Tomcat build/target/jpetstore.war /apps/DevOps/Tomcat/apache-tomcat-8.5.20/webapps/jpetstore.war
